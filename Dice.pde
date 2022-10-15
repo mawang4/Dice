@@ -1,6 +1,6 @@
-  Die dice; 
+ Die dice; 
   
-  int counter; 
+  int sum = 0;
   
   void setup()
   {
@@ -9,22 +9,23 @@
   }
   void draw()
   {
-      for(int j = 1; j <= 3; j++)
+      for(int j = 100; j <= 300; j+=100)
           {
-             for(int i = 1; i <= 3; i++)
+             for(int i = 100; i <= 300; i+=100)
              {
                dice = new Die(i, j); 
                dice.roll(); 
                dice.show(); 
+               sum = sum + dice.myNum;
              }
           }      
       textAlign(CENTER); 
-      text("Sum: " + counter, 300, 550);
+      text("Sum: " + sum, 300, 550);
 }
   void mousePressed()
   {
       redraw();
-      counter = 0;  
+      sum = 0;  
   }
   class Die //models one single dice cube
   {
@@ -37,8 +38,7 @@
       }
       void roll()
       {
-          myNum = (int)(Math.random()*6) + 1;
-          counter = counter + myNum;          
+          myNum = (int)(Math.random()*6) + 1; 
       }
       void show()
       {  

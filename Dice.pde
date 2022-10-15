@@ -1,4 +1,4 @@
- Die dice; 
+  Die dice; 
   
   int sum = 0;
   
@@ -9,9 +9,10 @@
   }
   void draw()
   {
-      for(int j = 100; j <= 300; j+=100)
+      background(198, 198, 198); 
+      for(int j = 40; j <= 440; j+=100)
           {
-             for(int i = 100; i <= 300; i+=100)
+             for(int i = 50; i < 550; i+=100)
              {
                dice = new Die(i, j); 
                dice.roll(); 
@@ -20,7 +21,7 @@
              }
           }      
       textAlign(CENTER); 
-      text("Sum: " + sum, 300, 550);
+      text("Sum: " + sum, 300, 570);
 }
   void mousePressed()
   {

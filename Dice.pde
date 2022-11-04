@@ -24,9 +24,9 @@
       text("Sum: " + sum, 300, 570);
 }
   void mousePressed()
-  {
-      redraw();
-      sum = 0;  
+  { 
+      sum = 0;
+      redraw(); 
   }
   class Die //models one single dice cube
   {
